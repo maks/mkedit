@@ -1,4 +1,4 @@
-h1. My Nodejs based text editor
+h1. My CodeMirror and Nodejs based text editor
 
 h2. Author: Maksim Lin
 
