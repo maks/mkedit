@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+  <head>
+    <title>CodeMirror 2: Vim bindings demo</title>
+    <link rel="stylesheet" href="../codemirror2/lib/codemirror.css">
+    <script src="../codemirror2/lib/codemirror.js"></script>
+    <script src="../codemirror2/mode/clike/clike.js"></script>
+    <script src="../codemirror2/keymap/vim.js"></script>
+    <link rel="stylesheet" href="../codemirror2/doc/docs.css">
+
+    <style type="text/css">
+      .CodeMirror {border-top: 1px solid #eee; border-bottom: 1px solid #eee;}
+    </style>
+  </head>
+  <body>
+    <h1>CodeMirror 2: Vim bindings demo</h1>
+
+    <form><textarea id="code" name="code">
+#include "syscalls.h"
+/* getchar:  simple buffered version */
+int getchar(void)
+{
+  static char buf[BUFSIZ];
+  static char *bufp = buf;
+  static int n = 0;
+  if (n == 0) {  /* buffer is empty */
+    n = read(0, buf, sizeof buf);
+    bufp = buf;
+  }
+  return (--n >= 0) ? (unsigned char) *bufp++ : EOF;
+}
+</textarea></form>
+
+<label>&gt;</label> <input type="text" id="cli" />
+
+    <script>
+      CodeMirror.commands.save = function(){alert("Saving");};
+      CodeMirror.fromTextArea(document.getElementById("code"), {
+        lineNumbers: true,
+        mode: "text/x-csrc",
+        keyMap: "vim"
+      });
+    </script>
+
+  </body>
+</html>
