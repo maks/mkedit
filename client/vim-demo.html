@@ -1,11 +1,13 @@
 <!doctype html>
 <html>
   <head>
-    <title>CodeMirror 2: Vim bindings demo</title>
+    <title>mkedit</title>
     <link rel="stylesheet" href="../codemirror2/lib/codemirror.css">
+    <script src="../js/jquery-1.6.4.js"></script>
     <script src="../codemirror2/lib/codemirror.js"></script>
     <script src="../codemirror2/mode/clike/clike.js"></script>
     <script src="../codemirror2/keymap/vim.js"></script>
+    <script src="../js/mkedit.js"></script>
     <link rel="stylesheet" href="../codemirror2/doc/docs.css">
 
     <style type="text/css">
@@ -13,7 +15,7 @@
     </style>
   </head>
   <body>
-    <h1>CodeMirror 2: Vim bindings demo</h1>
+    <h1>mkedit</h1>
 
     <form><textarea id="code" name="code">
 #include "syscalls.h"
@@ -34,12 +36,6 @@ int getchar(void)
 <label>&gt;</label> <input type="text" id="cli" />
 
     <script>
-      CodeMirror.commands.save = function(){alert("Saving");};
-      CodeMirror.fromTextArea(document.getElementById("code"), {
-        lineNumbers: true,
-        mode: "text/x-csrc",
-        keyMap: "vim"
-      });
     </script>
 
   </body>
