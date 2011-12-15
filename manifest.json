@@ -1,0 +1,16 @@
+{
+  "name": "mkedit",
+  "version": "1.0",
+  "description": "A programmers text editor.",
+  "app": {
+      "launch": {
+          "local_path": "editor.html"
+      }
+  },
+  "icons": {
+      "16" : "icon.png"
+  },
+  "permissions": [
+    "http://127.0.0.1/"
+  ]
+}
