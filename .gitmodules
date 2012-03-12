@@ -1,3 +1,6 @@
 [submodule "codemirror2"]
 	path = codemirror2
 	url = http://marijnhaverbeke.nl/git/codemirror2
+[submodule "gitjs"]
+	path = gitjs
+	url = git@github.com:maks/git.js.git
